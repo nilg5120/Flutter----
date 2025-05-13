@@ -15,21 +15,29 @@ int age = 30; // 整数型
 double height = 1.75; // 浮動小数点型
 String greeting = 'Hello, Dart!'; // 文字列型
 String quote = "シングルクォートでもダブルクォートでもOK";
-String variable = "${greeting}"; //Hello, Dart!が入ってるよ
+String variable = "${greeting}"; //${}で変数を表す。Hello, Dart!が入ってるよ
 String concat = 'Hello, ' 'Dart!'; //クォートが隣り合うとくっついて出力されるHello, Dart!
 String multiLine = """
     1行目
     2行目
     3行目
-""" //複数行をデータとして持てる。
+"""; //複数行をデータとして持てる。
+String escapeSpecialCharacter = r"Hello,/nDart!";//特殊文字の無効化
 bool isActive = true; // 真偽値型
+```
+### コレクション
+```dart
 //リスト
-List<String> fruits = ['Apple', 'Banana', 'Cherry']; // 文字列のリスト
-List<int> numbers = [1, 2, 3, 4, 5]; // 整数のリスト
-//マップ
-Map<String, int> scores = {'Alice': 90, 'Bob': 85}; // 文字列をキー、整数を値とするマップ
+List<String> fruits = ['Apple', 'Banana', 'Banana']; // 文字列のリスト
 //セット
 Set<String> uniqueFruits = {'Apple', 'Banana', 'Cherry'}; // 重複しない文字列の集合
+//マップ
+Map<String, int> scores = {'Alice': 90, 'Bob': 85}; // 文字列をキー、整数を値とするマップ
+//タプル
+final record1 = (300,"cake");
+```
+### ジェネリクス
+```dart
 ```
 ### 演算子
 ```dart
