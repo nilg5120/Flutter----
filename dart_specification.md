@@ -69,13 +69,58 @@ a = --b
 //三項演算子
 1=1?true:false;//この場合は左、違えば右
 ```
-### 条件分岐
+### カスケード記法
+```dart
+// カスケード記法を使ってプロパティにアクセス..
+final StringBuffer buffer = StringBuffer()
+    ..write('Hello, ')
+    ..write('Dart!');
+print(buffer.toString());
+```
+### spread演算子
+```dart
+// spread演算子を使ってリストやマップを展開
+List<String> fruits = ['Apple', 'Banana', 'Cherry'];
+List<String> moreFruits = ['Durian', 'Elderberry'];
+List<String> allFruits = [...fruits, ...moreFruits];
+print(allFruits);
+
+// マップの展開
+Map<String, int> scores = {'Alice': 90, 'Bob': 85};
+Map<String, int> moreScores = {'Charlie': 80};
+Map<String, int> allScores = {...scores, ...moreScores};
+print(allScores);
+```
+### 制御構文演算子
+```dart
+//コレクションのリテラル内でIfやforを使う
+List<String> fruits = ['Apple', 'Banana', 'Cherry'];
+List<String> filteredFruits = [
+  for (var fruit in fruits) if (fruit.startsWith('A')) fruit
+];
+
+```
+### 制御構文
 ```dart
 //if文
 if (age >= 18) {
   print('Adult');
 } else {
   print('Minor');
+}
+//if-case文
+Object value = 'hello';
+
+if (value case String text) {
+  print('文字列です: $text');
+}
+//if-case-when文
+if (value case int number when number > 0) {
+  print('正の整数です: $number');
+} else if (value case int number when number < 0) {
+  print('負の整数です: $number');
+} else {
+  print('整数ではありません');
 }
 //switch文
 switch(color){
