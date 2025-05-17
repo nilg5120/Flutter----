@@ -132,5 +132,53 @@ switch(color){
   default :
     print('default');
 }
+```
+### ループ
+```dart
+//for文
+for (int i = 0; i < 5; i++) {
+  print(i);
+}
+//for-in文
+List<String> names = ['Alice', 'Bob', 'Charlie'];
+for (String name in names) {
+  print(name);
+}
+//while文
+int count = 0;
+while (count < 5) {
+  print(count);
+  count++;
+}
+//do-while文
+int count = 0;
+do {
+  print(count);
+  count++;
+} while (count < 5);
+//break文
+for (int i = 0; i < 5; i++) {
+  if (i == 3) {
+    break; // ループを終了
+  }
+  print(i);
+}
+//continue文
 
+for (int i = 0; i < 5; i++) {
+  if (i == 3) {
+    continue; // 次の反復にスキップ
+  }
+  print(i);
+}
+//return文
+int add(int a, int b) {
+  return a + b; // 関数から値を返す
+}
+//yield文
+Iterable<int> generateNumbers(int n) sync* {
+  for (int i = 0; i < n; i++) {
+    yield i; // 値を生成
+  }
+}
 ```
